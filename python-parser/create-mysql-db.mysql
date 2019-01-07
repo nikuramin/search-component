@@ -1,0 +1,23 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+CREATE DATABASE IF NOT EXISTS `vk_userlist` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `vk_userlist`;
+
+DROP TABLE IF EXISTS `vk_users`;
+CREATE TABLE IF NOT EXISTS `vk_users` (
+  `user_id` int(11) NOT NULL,
+  `user_vk_id` int(11) NOT NULL,
+  `users_first_name` varchar(255) NOT NULL,
+  `user_last_name` varchar(255) NOT NULL,
+  `user_sex` int(11) NOT NULL,
+  `user_domain` varchar(255) NOT NULL,
+  `user_photo_max` varchar(255) NOT NULL,
+  `comment` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE `vk_users`
+  ADD PRIMARY KEY (`user_id`);
+
+ALTER TABLE `vk_users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
