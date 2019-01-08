@@ -19,12 +19,10 @@ while offset < vk_userlist['count']:
 		group_id = config.vk['group-id'],
 		fields = 'sex, bdate, city, country, photo_max, domain',
 		offset = offset)
-	print('vk_userlist count', vk_userlist['count'],'offset',offset)
 	insert_userlist = [
 		(user['id'],user['first_name'],user['last_name'],user['sex'],user['domain'],user['photo_max']) 
 		for user in vk_userlist['items']
 	]
-	print('len insert_userlist',len(insert_userlist))
 	q.executemany(
 		"""INSERT INTO vk_users (user_vk_id, users_first_name, user_last_name, user_sex, user_domain, user_photo_max)
 		VALUES (%s, %s, %s, %s, %s, %s)""",
