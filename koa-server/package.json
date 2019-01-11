@@ -1,0 +1,16 @@
+{
+  "name": "koa-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "koa": "^2.6.2",
+    "koa-body": "^4.0.6",
+    "koa-router": "^7.4.0",
+    "nodemon": "^1.18.9",
+    "promise-mysql": "^3.3.1"
+  }
+}

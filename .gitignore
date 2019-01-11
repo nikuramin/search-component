@@ -1,0 +1,9 @@
+
+python-parser/__pycache__/config.cpython-35.pyc
+python-parser/__pycache__/config.cpython-36.pyc
+python-parser/vk_config.v2.json
+python-parser/config.py
+koa-server/.vs
+koa-server/node_modules
+koa-server/config.js
+koa-server/yarn.lock
