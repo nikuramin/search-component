@@ -9,9 +9,7 @@ class UserItem extends Component {
     }
 
     userItemOnClickHandle = () => {
-        const { user } = this.props;
         this.setState({ showModal: true });
-        console.log('UserItem clicked to user', user);
     }
     
     render() {
@@ -26,7 +24,6 @@ class UserItem extends Component {
 
     modalCloseHandle() {
         this.setState({ showModal: false })
-        console.log('hi from modalCloseHandle', this.setState({ showModal:false }))
     }
 }
 

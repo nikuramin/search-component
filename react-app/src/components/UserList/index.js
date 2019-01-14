@@ -7,7 +7,7 @@ class UserList extends Component {
     render() {
         const { userList } = this.props;
         return (
-            <ul className="list-group">
+            <ul className="userList list-group w100">
                 {
                     userList &&
                     userList.map(user => {

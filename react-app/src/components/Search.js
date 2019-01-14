@@ -8,8 +8,9 @@ class Search extends Component {
     state = {
         htmlId:'searchComponent',
         dataPath: 'http://localhost:48703/searchUser?',
+        searchDelay: 700,
         minSearchStrLen: 3,
-        searchStrInput: '',
+        searchStrInput: ''
     }
         
     render() {
@@ -18,6 +19,7 @@ class Search extends Component {
                 <input type="text"
                     value={this.state.searchStrInput}
                     onChange={this.searchInputOnChange}
+                    placeholder="start enter user name"
                     className="form-control"/>
                 {
                     this.state.searchError &&
@@ -52,7 +54,7 @@ class Search extends Component {
             this.searchTimerId = setTimeout((prevStr) => {
                 if (prevStr === this.state.searchStrInput)
                     this.searchQuery();
-            }, 1000, event.target.value);
+            }, this.state.searchDelay, event.target.value);
         }
         if (event.target.value.length === 0) this.setState({ searchResults: [], searchError: null });
     }
