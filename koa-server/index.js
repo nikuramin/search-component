@@ -6,15 +6,16 @@ const router = require('./middleware/routes');
 app
     .use(async (ctx, next) => {
         try {
+            ctx.set('Access-Control-Allow-Origin', '*');
             await next();
         } catch (err) {
-            ctx.status = err.statusCode || err.status || 500;
+            ctx.status = err.statusCode || Number(err.status) || 500;
             ctx.body = {
                 message: err.message
             };
         }
     })
+    .use(require('koa-body')())
     .use(router.allowedMethods())
     .use(router.routes())
-    .use(require('koa-body')())
     .listen(48703);

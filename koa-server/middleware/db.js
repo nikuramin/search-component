@@ -6,7 +6,7 @@ async function query(queryStr,queryParams) {
     try {
         return await pool.query(queryStr, queryParams);;
     } catch (error) {
-        return {error: 'db middleware error'+error}
+        return {error: `db middleware error: ${error}`}
     }
 }
 

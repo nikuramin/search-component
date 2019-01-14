@@ -1,0 +1,8 @@
+.modal{
+    display: block;
+    background: rgba(0,0,0,0.3);
+    cursor:default;
+}
+.form-group {
+    margin-bottom:0;
+}
